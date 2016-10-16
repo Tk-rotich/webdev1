@@ -1,0 +1,189 @@
+body
+{
+    
+background:black;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:0.7em;
+margin-top: 0px;
+}
+#header
+{
+width:70%;
+border-bottom:solid 1px #FF6600;
+}
+#footList li
+{
+list-style:none;
+float:left;
+width:20%;
+color:green;
+
+}
+#header
+{
+width:70%;
+border-bottom:solid 1px #FF6600;
+margin-bottom:30px;
+}
+#tab1{
+width:80px;
+height:25px;
+background:lightgrey;
+border-right:solid 1px grey;
+
+}
+#col1{
+width:120px;
+height:25px;
+background:#FFD5AA;
+border-right:solid 1px grey;
+padding:4px;
+
+}
+#col2{
+width:120px;
+height:25px;
+
+border-right:solid 1px grey;
+padding:4px;
+
+}
+
+#nav{ text-align:center; margin:auto;}
+#nav a
+{
+list-style:none;
+float:left;
+width:15%;
+color:white;
+text-align:center;
+margin-bottom:10px;
+margin-top:10px;
+border:solid 1px #333333;
+background: #121212;
+padding:4px;
+font-weight:800;
+}
+
+#nav a  
+{
+text-decoration:none;
+color: #FF6600;
+}
+
+#nav a:hover
+{
+background:#FF6600;
+color:black;
+}
+
+#nav a.current  {
+    background-color: #FF6600;
+    background-position: 0 -60px;
+    color: black;
+    font-weight: bold;
+}
+
+#tab1{
+width:80px;
+height:25px;
+background:lightgrey;
+border-right:solid 1px grey;
+
+}
+#tab2{
+width:80px;
+height:25px;
+background:orange;
+border-right:solid 1px grey;
+font-weight:800;
+text-align:center;
+
+}
+
+#table{
+text-align:left;
+background:#CCCCCC;
+margin:20px;
+}
+
+
+div.content {
+    border-top: #48f solid 1px;
+    clear: left;
+    padding: 1em;
+
+}
+
+ol#toc {
+    height: 2em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ol#toc a {
+    background:  #FFD5AA url(tabs.gif);
+    color: #008;
+    display: block;
+    float: left;
+    height: 2em;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+ol#toc a:hover {
+    background-color: #FF8811;
+    background-position: 0 -120px;
+}
+
+ol#toc a:hover span {
+    background-position: 100% -120px;
+}
+
+ol#toc li {
+    float: left;
+    margin: 0 1px 0 0;
+}
+
+ol#toc li.current a {
+    background-color: #FF6600;
+    background-position: 0 -60px;
+    color: black;
+    font-weight: bold;
+}
+
+ol#toc li.current span {
+    background-position: 100% -60px;
+}
+
+ol#toc span {
+    background: url(tabs.gif) 100% 0;
+    display: block;
+    line-height: 2em;
+    padding-right: 10px;
+}
+
+
+.label{
+
+position:absolute;
+margin_top:-10%;
+background-color:#4E6C4E;
+text-align:center;
+padding:0 7px 0 7px;
+color:#FFFFFF;
+font-size:11px;
+line-height:20px;
+}
+
+#personal_details
+{
+padding:30px;
+}
+input{
+    border-radius: 5px;
+}
+body{
+    background-image: url("schl.jpg");
+}
