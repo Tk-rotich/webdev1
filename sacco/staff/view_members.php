@@ -15,8 +15,8 @@ if(isset($_GET['id_delete'])) {
    
 }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "">
+<html xmlns="">
 <head>
 
 <title>Sacco | Registration</title>
@@ -54,8 +54,8 @@ if(isset($_GET['id_delete'])) {
 </div>
      <ol id="toc">
    <li  class="current"><a href="view_members.php"><span>Registered Members</span></a></li>   
-	 <li ><a href="confirm_employer.php"><span>Add Member </span></a></li>
-   <li ><a href="employer_registration.php"><span>Adding Company Workers</span></a></li>
+	 <li ><a href="confirm_employer.php"><span>Add Sacco Member </span></a></li>
+   <li ><a href="employer_registration.php"><span>Add Company Workers</span></a></li>
 	
      </ol>
 	 

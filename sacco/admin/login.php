@@ -3,6 +3,7 @@ session_start();
 $message="";
 require_once('../db/conn.php');
 
+
 if (isset($_POST['login'])) 
 {
 	# code...
@@ -14,24 +15,27 @@ if (isset($_POST['login']))
 	
 
 	if(mysqli_num_rows($r) == 1 )
-		{
-			$_SESSION['email'] = $_POST['email'];
+		{   
+			$data=mysqli_fetch_assoc($r);
+			$email=$data['email'];
+
+			$_SESSION['email'] = $email;
+			
 			header("Location:index.php");
 		}
 
-	else{
+		else{
 		header("Location: ../access/login.php");
-	}
-
-	  
+	   }
+  
 	}
 
 	
 
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "">
+<html xmlns="">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>ADMIN |Login </title>
@@ -41,7 +45,7 @@ if (isset($_POST['login']))
 
 <body>
 <!-- <img align="middle" src="../image/login.png" width="100%" />  -->
-<img align="middle" src="../images/pic1.png" width="100%" />
+<img align="middle" src="../image/01.png" width="100%" />
 
 <table bgcolor="black" align="center" width="70%" height="100%" style=" border-radius: 10px; text-align:center;">
 <tr bgcolor="black" style="text-align:center; border-radius:5px; height:30px;">

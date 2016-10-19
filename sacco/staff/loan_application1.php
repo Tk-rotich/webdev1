@@ -114,14 +114,15 @@ else
 
 <script type="text/javascript" >
     
-
+     
 
     
     function dothis()
     {
       
       var loan_amount = Number(document.getElementById("loan_amount").value);
-      
+      var r_period = Number(document.getElementById("r_period").value);
+
       var savings = Number(document.getElementById("savings").value);
      
       if (document.form.loan_amount.value == "")
@@ -148,7 +149,7 @@ else
            {
                document.form.repayment_period.value="1 Month";
                document.form.rate.value=12;
-               var interest = loan_amount * 12 * 1/100;
+               var interest = loan_amount * 12 * 1/(100*12);
                var sum_loan = interest+loan_amount;
                var instal = Math.round(sum_loan);
                document.form.instalments.value=instal;
@@ -161,30 +162,30 @@ else
 
            else if (document.form.loan_type.value == "development") 
            {
-               document.form.repayment_period.value="6 Months";
+               document.form.repayment_period.value= r_period;
                document.form.rate.value=10;
-               var interest = loan_amount * 10 * 6/100;
+               var interest = loan_amount * 10 * r_period/(100*12);
                var sum_loan = interest+loan_amount;
-               var instal = Math.round(sum_loan / 6);
+               var instal = Math.round(sum_loan / r_period);
                document.form.instalments.value=instal;
                document.form.loan_balance.value= sum_loan ;
                document.form.loan_balance.value=sum_loan;
-               alert("Loan Type: Development loan. \nLoan Amount = Ksh "+loan_amount+"\nInterest = Ksh "+interest+"   \nTotal Repayment = Ksh "+sum_loan+" \nPayment Period 6 Months\nRate 10% Per Year\n Instalment  Ksh "+instal+"  per month");
+               alert("Loan Type: Development loan. \nLoan Amount = Ksh "+loan_amount+"\nInterest = Ksh "+interest+"   \nTotal Repayment = Ksh "+sum_loan+" \nPayment Period "+r_period+" Months\nRate 10% Per Year\n Instalment  Ksh "+instal+"  per month");
                
 
                return true;
            }
            else if (document.form.loan_type.value == "sunripe") 
            {
-               document.form.repayment_period.value="12 Months";
+               document.form.repayment_period.value= r_period;
                document.form.rate.value=12;
-               var interest = loan_amount * 12 * (1*12)/100;
+               var interest = loan_amount * 12 * (1*r_period)/(100*12);
                var sum_loan = interest+loan_amount;
-               var instal = Math.round(sum_loan / 12);
+               var instal = Math.round(sum_loan / r_period);
                document.form.instalments.value=instal;
                document.form.loan_balance.value= sum_loan ;
                document.form.loan_balance.value=sum_loan;
-               alert("Loan Type: Sunripe Plus loan. \nLoan Amount = Ksh "+loan_amount+"\nInterest = Ksh "+interest+"   \nTotal Repayment = Ksh "+sum_loan+" \nPayment Period 6 Months\nRate 12% Per Year\n Instalment  Ksh "+instal+"  per month");
+               alert("Loan Type: Sunripe Plus loan. \nLoan Amount = Ksh "+loan_amount+"\nInterest = Ksh "+interest+"   \nTotal Repayment = Ksh "+sum_loan+" \nPayment Period "+r_period+" Months\nRate 12% Per Year\n Instalment  Ksh "+instal+"  per month");
                
                return true;
            }
@@ -195,7 +196,7 @@ else
             }
            
           }
-        }  
+        }   
     
  function guarantor_id2()
  {
@@ -290,6 +291,11 @@ function guarantor_id1()
   <option value="sunripe">Sunripe Plus</option>
  </select>
 </td>
+</tr>
+
+<tr>
+<td>Repayment Period:</td>
+<td><input type="text" id="r_period" name="r_period"></td>
 </tr>
 
 <tr>

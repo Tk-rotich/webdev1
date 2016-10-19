@@ -10,12 +10,25 @@ if(!isset($_SESSION['username'])){
 $member_id=$_SESSION['username'];
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "">
+<html xmlns="">
 <head>
 
 <title>Sacco | Loan Repayments</title>
 <link rel="stylesheet" type="text/css" href="../design/style.css" />
+
+<script type="text/javascript">
+
+function dothis()
+{
+   if (document.form.payment_amount.value <= 1)
+        {
+          alert("Invalid Amount")
+          document.form.payment_amount.focus();
+          return false;
+        }
+}
+</script>
 </head>
 
 <body>
@@ -49,7 +62,7 @@ $member_id=$_SESSION['username'];
 	 
 	<div id="personal_details" style="border-top:1px dotted grey;" >   
 	
-<form action="#" method="post" > 
+<form action="#" id="form" name="form" method="post" > 
 
 <div id="personal_details" style="border:1px dotted grey;" >  
 <div class="label">Pay Loan </div>
@@ -61,7 +74,7 @@ $member_id=$_SESSION['username'];
 </tr>
 <tr>
 <td>Amount:</td>
-<td><input  type="text" name="payment_amount" /></td>
+<td><input  type="text" id="payment_amount" onchange="dothis()" name="payment_amount" /></td>
 </tr>
 
 

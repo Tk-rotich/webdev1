@@ -2,15 +2,26 @@
 session_start();
 //error_reporting(0);
 require_once('../db/conn.php');
+$massage = "";
 
 if(!isset($_SESSION['email'])){
   header('Location:login.php');
 }
 
+if(isset($_POST['save']))
+{
+$sql = "INSERT INTO staff (national_id,first_name,last_name,password) 
+VALUES('$_POST[national_id]', '$_POST[first_name]','$_POST[last_name]','$_POST[password]')";
+mysqli_query($connct,$sql);
+
+$massage = "Staff added succesfull";
+
+}
+
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html >
+<html xmlns="">
 <head>
 
 <title>Sacco | Admin</title>
@@ -19,7 +30,7 @@ if(!isset($_SESSION['email'])){
 
 <body>
 
-<img align="middle" src="../images/pic1.png" width="100%" />
+<img align="middle" src="../image/01.png" width="100%" />
 <table bgcolor="black" align="center" width="70%" height="100%" style=" border-radius: 10px;">
 <tr bgcolor="black"><td>
 <ul id="nav"  style="border-radius:5px;">
@@ -27,7 +38,7 @@ if(!isset($_SESSION['email'])){
 <a  href="add_staff.php"><li>Add Staff</li></a>
 <a href="view_staff.php"><li>View staff</li></a>
 <a  href="add_employer.php"><li>Add employer</li></a>
-<a  href="../access/logout.php"><li>Log out</li></a>
+<a  href="logout.php"><li>Log out</li></a>
 
 
 </ul>
@@ -85,30 +96,17 @@ if(!isset($_SESSION['email'])){
 </div>  
 
 
-<input style="margin-top:10px;margin-bottom:10px;" type="submit" value="SAVE" name="save" />
+<input style="margin-top:10px;margin-bottom:10px;" type="submit" value="SAVE" name="save" /><br>
 
 
 
 
 <?php
 
-if(isset($_POST['save']))
-{
-$sql = "INSERT INTO staff (national_id,first_name,last_name,password) 
-VALUES('$_POST[national_id]', '$_POST[first_name]','$_POST[last_name]','$_POST[password]')";
-mysqli_query($connct,$sql);
-
-
-
-}
+echo $massage;
 
 
 ?>
-
-
-
-
-
 </td> 
 </tr> 
 

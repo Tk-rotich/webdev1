@@ -2,12 +2,13 @@
 session_start();
 //error_reporting(0);
 require_once('../db/conn.php');
-$message="";
-$admin_id=$_SESSION['email'];
+
 if(!isset($_SESSION['email'])){
   header('Location:login.php');
 }
 
+$message="";
+$admin_id=$_SESSION['email'];
 
 if(isset($_GET['id_delete']))
 {
@@ -18,8 +19,8 @@ if(isset($_GET['id_delete']))
 }
 
  ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "">
+<html xmlns="">
 <head>
 
 <title>Sacco | Admin</title>
@@ -30,8 +31,7 @@ if(isset($_GET['id_delete']))
 </head>
 
 <body>
-<img align="middle" src="../images/pic1.png" width="100%" />
-
+<img align="middle" src="../image/01.png" width="100%" />
 <table bgcolor="black" align="center" width="70%" height="100%" style=" border-radius: 10px;">
 <tr bgcolor="black"><td>
 <ul id="nav"  style="border-radius:5px;">
@@ -39,7 +39,7 @@ if(isset($_GET['id_delete']))
 <a  href="add_staff.php"><li>Add Staff</li></a>
 <a href="view_staff.php"><li>View staff</li></a>
 <a  href="add_employer.php"><li>Add employer</li></a>
-<a  href="../access/logout.php"><li>Log out</li></a>
+<a  href="logout.php"><li>Log out</li></a>
 
 
 </ul>

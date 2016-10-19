@@ -16,6 +16,19 @@ if(!isset($_SESSION['username'])){
 
 <title>Sacco | Savings</title>
 <link rel="stylesheet" type="text/css" href="../design/style.css" />
+
+<script type="text/javascript">
+function dothis()
+{
+   if (document.form.saving_amount.value <= 1)
+        {
+          alert("Invalid Amount")
+          document.form.saving_amount.focus();
+          return false;
+        }
+}
+</script>
+
 </head>
 
 <body>
@@ -50,7 +63,7 @@ if(!isset($_SESSION['username'])){
 	 <div id="personal_details" style="border-top:1px dotted grey;" >  
 <div class="contenta">
 </div>
-<form action="#" method="post" >
+<form action="#" id="form" name="form" method="post" >
 
 <div id="personal_details" style="border:1px dotted grey;" >  
 
@@ -62,7 +75,7 @@ if(!isset($_SESSION['username'])){
 </tr>
 <tr>
 <td>Amount:</td>
-<td><input  type="text" name="saving_amount" /></td>
+<td><input  type="text" onchange="dothis()" name="saving_amount" /></td>
 </tr>
 
 

@@ -18,8 +18,8 @@ if(isset($_GET['id_delete'])) {
 }
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "">
+<html xmlns="">
 <head>
 
 <title>Sacco | Loan Repayment Records</title>
@@ -60,7 +60,8 @@ if(isset($_GET['id_delete'])) {
 	  <li    ><a href="view_loan_applications.php"><span>Application record </span></a></li>
 	 <li    ><a href="loan_repayments.php"><span>Loan Repayment </span></a></li>
     <li  class="current"   ><a href="view_loan_repayments.php"><span>Repayments Record</span></a></li>
-	  <li   ><a href="manage_loan_application.php"><span>Manage</span></a></li> 
+	  <li   ><a href="manage_loan_application.php"><span>Manage</span></a></li>
+      <li   ><a href="sort_loan_applications.php"><span>Search loan By:</span></a></li>	  
      </ol>
 	 
 	<div id="personal_details" style="border-top:1px dotted grey;" >   

@@ -57,7 +57,20 @@ if(isset($_POST['campany']))
 <title>Sacco | Registration</title>
 <link rel="stylesheet" type="text/css" href="../design/style.css" />
 
+<script type="text/javascript" >
 
+  function dothis()
+      {
+         if (document.form.salary.value < 6000)
+              {
+                alert("Salary Amount should be more than 6000! ")
+                document.form.salary.focus();
+                document.getElementById("salary").style.color = 'red';
+                return false;
+              }
+      }
+</script>
+</script>
 
 </head>
 
@@ -83,20 +96,24 @@ if(isset($_POST['campany']))
 </div>
 
    <ol id="toc">
-   <li class="current"><a href="employer_registration.php"><span>Registered Members</span></a></li>   
-	 <li><a href="confirm_employer.php"><span>Add Member </span></a></li>
+   <li><a href="employer_registration.php"><span>Add Company Worker</span></a></li>   
+   <li><a href="confirm_employer.php"><span>Add Sacco Member </span></a></li>
+   <li class="current"><a href="#"><span>New Employee:</span></a></li>
    </ol>
-<form name="form" action="#"  onsubmit="return validateForm()" method="post" > 
+<form name="form" action="#" id="form"  method="post" > 
 <div id="personal_details" style="border:1px dotted grey;" >  
 <div class="label">Personal details </div>
 <table align="center" width="50%" >  
 
 <tr>
 <td>Company Name:</td>
-<td><input type="text" value="<?php echo $emp_name ?>" disabled="disabled" name="emp_name" /><input type="hidden" value="<?php echo $emp_name ?>" /></td>
+<td><input type="text" value="<?php echo $emp_name ?>" disabled="disabled" name="emp_name" /><input  name="emp_name" type="hidden" value="<?php echo $emp_name ?>" /></td>
 </tr>
 
-<input type="hidden" value="<?php echo $emp_id ?>" name="emp_id" />
+<tr>
+<td>Company ID</td>
+<td><input type="text" value="<?php echo $emp_id ?>" disabled="disabled" name="emp_id" /><input type="hidden" value="<?php echo $emp_id ?>" name="emp_id" /></td>
+</tr>
 
 <tr>
 <td>National ID</td>
@@ -111,7 +128,7 @@ if(isset($_POST['campany']))
 
 <tr>
 <td>Sallary</td>
-<td><input type="text" id="salary" required="required" name="salary" /></td>
+<td><input type="text" id="salary" required="required" onchange="dothis()" name="salary" /></td>
 </tr>
 
 <tr>

@@ -268,7 +268,7 @@ function guarantor_id1()
 
 <tr>
 <td>Repayment Period:</td>
-<td><input type="text" id="r_period" name="r_period"></td>
+<td><input type="text" id="r_period" name="r_period">Months</td>
 </tr>
 
 <tr>
